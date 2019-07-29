@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+
+    This Source Code Form is subject to the terms of the Mozilla Public License, v.
+    2.0 with a Healthcare Disclaimer.
+    A copy of the Mozilla Public License, v. 2.0 with the Healthcare Disclaimer can
+    be found under the top level directory, named LICENSE.
+    If a copy of the MPL was not distributed with this file, You can obtain one at
+    http://mozilla.org/MPL/2.0/.
+    If a copy of the Healthcare Disclaimer was not distributed with this file, You
+    can obtain one at the project website https://github.com/igia.
+
+    Copyright (C) 2018-2019 Persistent Systems, Inc.
+
+-->
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity Task audit
+    -->
+    <changeSet id="task_audit" author="jhipster">
+        <createTable tableName="task_aud">
+            <column name="id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="REV" type="SERIAL">
+				<constraints nullable="false" />
+			</column>
+			<column name="REVTYPE" type="TINYINT" />
+            <column name="task_id_u" type="varchar(25)"/>
+
+            <column name="name" type="varchar(255)"/>
+
+            <column name="description" type="varchar(1000)"/>
+
+            <column name="jhi_type" type="varchar(255)"/>
+
+            <column name="type_ref" type="varchar(255)"/>
+
+            <column name="due_date" type="date"/>
+
+            <column name="assignee" type="varchar(255)"/>
+
+            <column name="entry_criteria" type="varchar(500)"/>
+
+            <column name="repeat_frequency_value" type="integer"/>
+
+            <column name="repeat_frequency_unit" type="varchar(255)"/>
+
+            <column name="repeat_event" type="varchar(255)"/>
+
+            <column name="lookup" type="varchar(35)"/>
+
+            <column name="sla" type="integer"/>
+
+            <column name="is_repeat" type="boolean"/>
+
+            <column name="goal_id" type="bigint"/>
+
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+        
+    </changeSet>
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here, do not remove-->
+     <changeSet author="jhipster" id="task_audit_pk">
+		<addPrimaryKey columnNames="id, REV" constraintName="task_audit_pk"
+			tableName="task_aud" />
+	</changeSet>
+
+	<changeSet author="jhipster" id="task_audit_fk">
+		<addForeignKeyConstraint baseColumnNames="REV"
+			baseTableName="task_aud" constraintName="task_audit_fk"
+			deferrable="false" initiallyDeferred="false" referencedColumnNames="rev"
+			referencedTableName="revinfo" />
+	</changeSet>
+    
+</databaseChangeLog>

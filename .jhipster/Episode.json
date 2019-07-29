@@ -1,0 +1,84 @@
+{
+    "name": "Episode",
+    "fields": [
+        {
+            "fieldName": "episodeIdU",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 2,
+            "fieldValidateRulesMaxlength": 25
+        },
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 2,
+            "fieldValidateRulesMaxlength": 255
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 1000
+        },
+        {
+            "fieldName": "entryCriteria",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 500
+        },
+        {
+            "fieldName": "lookup",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 2,
+            "fieldValidateRulesMaxlength": 35
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "program",
+            "otherEntityName": "program",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "goal",
+            "otherEntityName": "goal",
+            "otherEntityRelationshipName": "episode"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "episodeAssociate",
+            "otherEntityName": "episodeAssociate",
+            "otherEntityRelationshipName": "episode"
+        }
+    ],
+    "changelogDate": "20181101052234",
+    "entityTableName": "episode",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "caremanagement",
+    "applications": "*",
+    "microserviceName": "caremanagement"
+}

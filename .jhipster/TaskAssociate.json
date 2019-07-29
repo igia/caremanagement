@@ -1,0 +1,35 @@
+{
+    "name": "TaskAssociate",
+    "fields": [
+        {
+            "fieldName": "associateEvent",
+            "fieldType": "CaseExecutionEvent",
+            "fieldValues": "CREATE,COMPLETE,START"
+        },
+        {
+            "fieldName": "associateOn",
+            "fieldType": "Long",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "task",
+            "otherEntityName": "task",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20181101052239",
+    "entityTableName": "task_associate",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "caremanagement",
+    "applications": "*",
+    "microserviceName": "caremanagement"
+}

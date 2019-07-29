@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+
+    This Source Code Form is subject to the terms of the Mozilla Public License, v.
+    2.0 with a Healthcare Disclaimer.
+    A copy of the Mozilla Public License, v. 2.0 with the Healthcare Disclaimer can
+    be found under the top level directory, named LICENSE.
+    If a copy of the MPL was not distributed with this file, You can obtain one at
+    http://mozilla.org/MPL/2.0/.
+    If a copy of the Healthcare Disclaimer was not distributed with this file, You
+    can obtain one at the project website https://github.com/igia.
+
+    Copyright (C) 2018-2019 Persistent Systems, Inc.
+
+-->
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+	<!-- Added the unique constraints for entity Decision. -->
+
+
+	<changeSet author="jhipster" id="uniqueConstraint">
+
+		<addUniqueConstraint columnNames="name"
+			constraintName="unique_program_name" schemaName="public" tableName="program" />
+
+		<!-- <addUniqueConstraint columnNames="name,program_id"
+			constraintName="unique_episode_name" schemaName="public" tableName="episode" /> -->
+
+		 <addUniqueConstraint columnNames="name,episode_id"
+			constraintName="unique_goal_name" schemaName="public" tableName="goal" />
+
+		<addUniqueConstraint columnNames="name,goal_id"
+			constraintName="unique_task_name" schemaName="public" tableName="task" />
+
+		<addUniqueConstraint columnNames="goal_id,associate_on"
+			constraintName="unique_associate_on_goal_associate" schemaName="public"
+			tableName="goal_associate" />
+
+		<!-- <addUniqueConstraint columnNames="episode_id,associate_on"
+			constraintName="unique_associate_on_episode_associate" schemaName="public"
+			tableName="episode_associate" /> -->
+
+		<addUniqueConstraint columnNames="task_id,associate_on"
+			constraintName="unique_associate_on_task_associate" schemaName="public"
+			tableName="task_associate" />
+
+	</changeSet>
+</databaseChangeLog>

@@ -1,0 +1,41 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "io.igia.caremanagement",
+      "nativeLanguage": "en"
+    },
+    "jhipsterVersion": "5.4.2",
+    "applicationType": "microservice",
+    "baseName": "caremanagement",
+    "packageName": "io.igia.caremanagement",
+    "packageFolder": "io/igia/caremanagement",
+    "serverPort": "8091",
+    "authenticationType": "oauth2",
+    "cacheProvider": "hazelcast",
+    "enableHibernateCache": false,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "postgresql",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": "eureka",
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "OTEwZGNhNDZiNDMzMDFmMmMyOWFmODUzMWRmMWNjY2E4YzRhYjNiYTljZTM3YTc0MmZjZDAyMjNlYWY0ZjVjYmJiYTM2NzIzMTdkZWFiMDE1YWJlZThkODZmNWRkMTMzYWY2NzU5OGViYzEzNTE3YjNiZmFmNTY4NjZhZDJhNDk=",
+    "enableTranslation": true,
+    "languages": [
+      "en",
+      "es"
+    ],
+    "testFrameworks": [
+      "gatling",
+      "cucumber"
+    ],
+    "jhiPrefix": "jhi",
+    "clientPackageManager": "npm",
+    "nativeLanguage": "en",
+    "skipClient": true,
+    "skipUserManagement": true
+  }
+}

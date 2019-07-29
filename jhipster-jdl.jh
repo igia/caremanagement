@@ -1,0 +1,112 @@
+
+enum TaskCategory {
+    TODO,
+	UPCOMING,
+	MISSED,
+	AVAILABLE,
+	HISTORY
+}
+
+enum Category {
+    AVAILABLE,
+	HISTORY,
+	ACTIVE
+}
+
+enum Type{
+  DECISION,
+  HUMAN
+}
+
+
+enum CaseExecutionEvent{
+  CREATE, 
+  COMPLETE,
+  START
+}
+
+enum TimeUnit{
+  DAY,
+  DAYS,
+  DAILY,
+  WEEK,
+  WEEKS,
+  WEEKLY,
+  MONTH,
+  MONTHS,
+  MONTHLY,
+  YEAR,
+  YEARS,
+  YEARLY 
+}
+
+entity Program {
+    programIdU String required minlength(2) maxlength(25),
+	name String required minlength(2) maxlength(255),
+    description String maxlength(1000)
+}
+entity Episode {
+    episodeIdU String required minlength(2) maxlength(25),
+	name String required minlength(2) maxlength(255),
+    description String maxlength(1000),
+    entryCriteria String maxlength(500),
+    lookup String required minlength(2) maxlength(35)
+}
+
+entity EpisodeAssociate{
+    associateEvent CaseExecutionEvent,
+    associateOn Long required,
+}
+
+entity Goal {
+    goalIdU String required minlength(2) maxlength(25),
+	name String required minlength(2) maxlength(255),
+    description String maxlength(1000),
+    entryCriteria String maxlength(500),
+    etaValue Integer required,
+    etaUnit TimeUnit required,
+    lookup String required minlength(2) maxlength(35)
+}
+
+entity GoalAssociate{
+    associateEvent CaseExecutionEvent,
+    associateOn Long required,
+}
+
+entity Task{
+    taskIdU String required minlength(2) maxlength(25),
+    name String required minlength(2) maxlength(255),
+    description String maxlength(1000),
+    type Type required,
+    typeRef String,
+    dueDate LocalDate,
+    assignee String required,
+    entryCriteria String maxlength(500),
+    repeatFrequencyValue Integer,
+    repeatFrequencyUnit TimeUnit,
+    repeatEvent CaseExecutionEvent,
+    lookup String required minlength(2) maxlength(35),
+    sla Integer,
+    isRepeat Boolean required
+}
+
+entity TaskAssociate{
+    associateEvent CaseExecutionEvent,
+    associateOn Long required,
+}
+
+
+relationship OneToMany {
+	Program{episode} to Episode,
+	Episode{goal} to Goal,
+    Goal{task} to Task,
+    Episode{episodeAssociate} to EpisodeAssociate,
+    Goal{goalAssociate} to GoalAssociate,
+    Task{taskAssociate} to TaskAssociate
+}
+
+dto * with mapstruct
+service all with serviceImpl
+paginate * with pagination
+
+

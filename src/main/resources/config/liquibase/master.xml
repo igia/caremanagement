@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+
+    This Source Code Form is subject to the terms of the Mozilla Public License, v.
+    2.0 with a Healthcare Disclaimer.
+    A copy of the Mozilla Public License, v. 2.0 with the Healthcare Disclaimer can
+    be found under the top level directory, named LICENSE.
+    If a copy of the MPL was not distributed with this file, You can obtain one at
+    http://mozilla.org/MPL/2.0/.
+    If a copy of the Healthcare Disclaimer was not distributed with this file, You
+    can obtain one at the project website https://github.com/igia.
+
+    Copyright (C) 2018-2019 Persistent Systems, Inc.
+
+-->
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180927055618_added_entity_Task.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181101052233_added_entity_Program.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181101052234_added_entity_Episode.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181101052235_added_entity_EpisodeAssociate.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181101052236_added_entity_Goal.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181101052237_added_entity_GoalAssociate.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181101052239_added_entity_TaskAssociate.xml" relativeToChangelogFile="false"/>
+    <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20181101052234_added_entity_constraints_Episode.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181101052235_added_entity_constraints_EpisodeAssociate.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181101052236_added_entity_constraints_Goal.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181101052237_added_entity_constraints_GoalAssociate.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180927055618_added_entity_constraints_Task.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181101052239_added_entity_constraints_TaskAssociate.xml" relativeToChangelogFile="false"/>
+    <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
+    <include file="config/liquibase/changelog/add_unique_constraints.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/foreign_key_constraints.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/unique_constraints.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/add_entity_revinfo.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/add_sequence_generator.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/added_entity_episode_audit.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/added_entity_episodeAssociate_audit.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/added_entity_goal_audit.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/added_entity_goalAssociate_audit.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/added_entity_program_audit.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/added_entity_task_audit.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/added_entity_taskAssociate_audit.xml" relativeToChangelogFile="false"/>
+</databaseChangeLog>

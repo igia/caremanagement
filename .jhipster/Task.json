@@ -1,0 +1,126 @@
+{
+    "name": "Task",
+    "fields": [
+        {
+            "fieldName": "taskIdU",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 2,
+            "fieldValidateRulesMaxlength": 25
+        },
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 2,
+            "fieldValidateRulesMaxlength": 255
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 1000
+        },
+        {
+            "fieldName": "type",
+            "fieldType": "Type",
+            "fieldValues": "DECISION,HUMAN",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "typeRef",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dueDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "assignee",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "entryCriteria",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 500
+        },
+        {
+            "fieldName": "repeatFrequencyValue",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "repeatFrequencyUnit",
+            "fieldType": "TimeUnit",
+            "fieldValues": "DAY,DAYS,DAILY,WEEK,WEEKS,WEEKLY,MONTH,MONTHS,MONTHLY,YEAR,YEARS,YEARLY"
+        },
+        {
+            "fieldName": "repeatEvent",
+            "fieldType": "CaseExecutionEvent",
+            "fieldValues": "CREATE,COMPLETE,START"
+        },
+        {
+            "fieldName": "lookup",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 2,
+            "fieldValidateRulesMaxlength": 35
+        },
+        {
+            "fieldName": "sla",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "isRepeat",
+            "fieldType": "Boolean",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "goal",
+            "otherEntityName": "goal",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "taskAssociate",
+            "otherEntityName": "taskAssociate",
+            "otherEntityRelationshipName": "task"
+        }
+    ],
+    "changelogDate": "20180927055618",
+    "entityTableName": "task",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "caremanagement",
+    "applications": "*",
+    "microserviceName": "caremanagement"
+}

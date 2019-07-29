@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    This Source Code Form is subject to the terms of the Mozilla Public License, v.
+    2.0 with a Healthcare Disclaimer.
+    A copy of the Mozilla Public License, v. 2.0 with the Healthcare Disclaimer can
+    be found under the top level directory, named LICENSE.
+    If a copy of the MPL was not distributed with this file, You can obtain one at
+    http://mozilla.org/MPL/2.0/.
+    If a copy of the Healthcare Disclaimer was not distributed with this file, You
+    can obtain one at the project website https://github.com/igia.
+
+    Copyright (C) 2018-2019 Persistent Systems, Inc.
+
+-->
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+	<changeSet id="episode_sequence" author="jhipster">
+		<createSequence sequenceName="episode_sequence"
+			startValue="500" incrementBy="50" />
+	</changeSet>
+	<changeSet id="episode_associate_sequence" author="jhipster">
+		<createSequence sequenceName="episode_associate_sequence"
+			startValue="500" incrementBy="50" />
+	</changeSet>
+	<changeSet id="goal_sequence" author="jhipster">
+		<createSequence sequenceName="goal_sequence"
+			startValue="500" incrementBy="50" />
+	</changeSet>
+	<changeSet id="goal_associate_sequence" author="jhipster">
+		<createSequence sequenceName="goal_associate_sequence"
+			startValue="500" incrementBy="50" />
+	</changeSet>
+	<changeSet id="program_sequence" author="jhipster">
+		<createSequence sequenceName="program_sequence"
+			startValue="500" incrementBy="50" />
+	</changeSet>
+	<changeSet id="task_sequence" author="jhipster">
+		<createSequence sequenceName="task_sequence"
+			startValue="500" incrementBy="50" />
+	</changeSet>
+	<changeSet id="task_associate_sequence" author="jhipster">
+		<createSequence sequenceName="task_associate_sequence"
+			startValue="500" incrementBy="50" />
+	</changeSet>
+	<changeSet id="audit_event_sequence" author="jhipster">
+		<createSequence sequenceName="audit_event_sequence"
+			startValue="500" incrementBy="50" />
+	</changeSet>
+	<changeSet author="jhipster" id="create_tinyint">
+		<sql dbms="postgresql">CREATE DOMAIN "tinyint" AS smallint</sql>
+	</changeSet>
+</databaseChangeLog>

@@ -1,0 +1,9 @@
+{
+      "variables":
+      {
+      	 "Navigator" : {"value" : "service-account-internal", "type": "String"},
+       	"PCP" : {"value" : "service-account-internal", "type": "String"}
+      },
+       "mrn" : " ",
+      	"programId": " "
+}

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+
+    This Source Code Form is subject to the terms of the Mozilla Public License, v.
+    2.0 with a Healthcare Disclaimer.
+    A copy of the Mozilla Public License, v. 2.0 with the Healthcare Disclaimer can
+    be found under the top level directory, named LICENSE.
+    If a copy of the MPL was not distributed with this file, You can obtain one at
+    http://mozilla.org/MPL/2.0/.
+    If a copy of the Healthcare Disclaimer was not distributed with this file, You
+    can obtain one at the project website https://github.com/igia.
+
+    Copyright (C) 2018-2019 Persistent Systems, Inc.
+
+-->
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+	<!-- Added the unique constraints for entity Decision. -->
+
+	<changeSet author="jhipster" id="addUniqueConstraint">
+					
+		<addUniqueConstraint columnNames="task_id_u,goal_id"
+			constraintName="unique_task" schemaName="public" tableName="task" />
+			
+		<addUniqueConstraint columnNames="goal_id_u, episode_id"
+			constraintName="unique_goal" schemaName="public" tableName="goal" />
+			
+		<addUniqueConstraint columnNames="episode_id_u, program_id"
+			constraintName="unique_episode" schemaName="public" tableName="episode" />
+			
+		<addUniqueConstraint columnNames="program_id_u"
+			constraintName="unique_program" schemaName="public" tableName="program" />	
+		
+		<addUniqueConstraint columnNames="lookup"
+			constraintName="unique_task_lookup" schemaName="public" tableName="task" />
+			
+		<addUniqueConstraint columnNames="lookup"
+			constraintName="unique_goal_lookup" schemaName="public" tableName="goal" />
+			
+		<addUniqueConstraint columnNames="lookup"
+			constraintName="unique_episode_lookup" schemaName="public" tableName="episode" />
+									
+	</changeSet>
+</databaseChangeLog>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+
+    This Source Code Form is subject to the terms of the Mozilla Public License, v.
+    2.0 with a Healthcare Disclaimer.
+    A copy of the Mozilla Public License, v. 2.0 with the Healthcare Disclaimer can
+    be found under the top level directory, named LICENSE.
+    If a copy of the MPL was not distributed with this file, You can obtain one at
+    http://mozilla.org/MPL/2.0/.
+    If a copy of the Healthcare Disclaimer was not distributed with this file, You
+    can obtain one at the project website https://github.com/igia.
+
+    Copyright (C) 2018-2019 Persistent Systems, Inc.
+
+-->
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+	<changeSet id="addForeignConstarints" author="jhipster">
+
+		<addForeignKeyConstraint baseColumnNames="associate_on"
+			baseTableName="goal_associate" constraintName="fk_goal_associate_on_goal_id"
+			referencedColumnNames="id" referencedTableName="goal" onDelete="CASCADE" />
+
+		<addForeignKeyConstraint baseColumnNames="associate_on"
+			baseTableName="task_associate" constraintName="fk_task_associate_on_task_id"
+			referencedColumnNames="id" referencedTableName="task" onDelete="CASCADE"/>
+
+		<!-- <addForeignKeyConstraint baseColumnNames="associate_on"
+			baseTableName="episode_associate" constraintName="fk_episode_associate_on_episode_id"
+			referencedColumnNames="id" referencedTableName="episode" /> -->
+
+	</changeSet>
+
+</databaseChangeLog>
