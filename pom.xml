@@ -18,7 +18,7 @@
 
     <groupId>io.igia.caremanagement</groupId>
     <artifactId>caremanagement</artifactId>
-    <version>0.3.0</version>
+    <version>0.3.2</version>
     <packaging>war</packaging>
     <name>Caremanagement</name>
 
