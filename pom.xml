@@ -18,7 +18,7 @@
 
     <groupId>io.igia.caremanagement</groupId>
     <artifactId>caremanagement</artifactId>
-    <version>0.3.2</version>
+    <version>0.3.3</version>
     <packaging>war</packaging>
     <name>Caremanagement</name>
 
@@ -400,7 +400,7 @@
 		<dependency>
 		    <groupId>org.apache.commons</groupId>
 		    <artifactId>commons-compress</artifactId>
-		    <version>1.18</version>
+		    <version>1.19</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
 		<dependency>
